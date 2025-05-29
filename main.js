@@ -437,7 +437,11 @@ function toggleGuestbook() {
   categoryBar.style.display = isOpen ? 'flex' : 'none';
   subcategoryBar.style.display = isOpen ? 'flex' : 'none';
   cardGrid.style.display = isOpen ? 'flex' : 'none';
+
+  // ✅ 페이지네이션도 같이 숨기기!
+  document.getElementById('pagination').style.display = isOpen ? 'flex' : 'none';
 }
+
 
 // 이벤트 연결
 window.addEventListener("DOMContentLoaded", () => {
@@ -455,6 +459,10 @@ document.getElementById("homeButton").addEventListener("click", () => {
   categoryBar.style.display = 'flex';
   subcategoryBar.style.display = 'flex';
   cardGrid.style.display = 'flex';
+
+  // ✅ 페이지네이션도 다시 보이게!
+  document.getElementById('pagination').style.display = 'flex';
+
 
   // 기존엔 renderCategories(); 였는데, 아래처럼 수정!
   document.querySelectorAll('.category-bar button').forEach(b => b.classList.remove('active'));
